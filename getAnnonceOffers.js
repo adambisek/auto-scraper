@@ -47,8 +47,7 @@ const getResults = async () => {
   const page = await browser.newPage();
   let allTasksResults = []
 
-  for (task of TASKS) {
-    const { url, name } = task;
+  for ({ url, name } of TASKS) {
     await page.goto(url);
     let results = []
     let run = true
